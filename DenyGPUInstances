@@ -1,0 +1,33 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "DenyGPUInstanceCreation",
+            "Effect": "Deny",
+            "Action": [
+                "ec2:*"
+            ],
+            "Resource": [
+                "arn:aws:ec2:*:*:instance/*",
+                "arn:aws:ec2:*:*:image/*"
+            ],
+            "Condition": {
+                "ForAnyValue:StringEquals": {
+                    "ec2:InstanceType": [
+                        "g3",
+                        "g3s",
+                        "g4",
+                        "g4dn",
+                        "g4ad",
+                        "g5",
+                        "g5g",
+                        "p2",
+                        "p3",
+                        "p4",
+                        "p5"
+                    ]
+                }
+            }
+        }
+    ]
+}
