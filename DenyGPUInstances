@@ -1,3 +1,5 @@
+//This AWS Policy denies actions including creating instances with gpu instance types
+
 {
     "Version": "2012-10-17",
     "Statement": [
